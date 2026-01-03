@@ -1,6 +1,6 @@
 ---
 - name: Open required ports in firewalld
-  hosts: alma5
+  hosts: host
   become: yes
 
   tasks:
