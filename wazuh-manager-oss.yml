@@ -1,7 +1,7 @@
 ---
-- hosts: alma5
+- hosts: wazuh_manager
   roles:
     - role: /etc/ansible/roles/wazuh-ansible/roles/wazuh/ansible-wazuh-manager
     - role: /etc/ansible/roles/wazuh-ansible/roles/wazuh/ansible-filebeat-oss
       filebeat_output_indexer_hosts:
-      - "192.168.64.132:9200"
+      - "192.168.64.xxx:9200"
