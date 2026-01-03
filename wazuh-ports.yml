@@ -1,0 +1,39 @@
+---
+- name: Open required ports in firewalld
+  hosts: alma5
+  become: yes
+
+  tasks:
+    - name: Ensure firewalld is installed
+      ansible.builtin.package:
+        name: firewalld
+        state: present
+
+    - name: Ensure firewalld is running and enabled
+      ansible.builtin.service:
+        name: firewalld
+        state: started
+        enabled: yes
+
+    - name: Open required TCP and UDP ports
+      ansible.posix.firewalld:
+        port: "{{ item }}"
+        permanent: true
+        state: enabled
+      loop:
+        - 55000/tcp
+        - 443/tcp
+        - 1514/tcp
+        - 1514/udp
+        - 1515/tcp
+        - 1516/tcp
+        - 514/udp
+        - 514/tcp
+        - 9200/tcp
+        - 9300/tcp
+
+    - name: Reload firewalld to apply changes
+      ansible.builtin.service:
+        name: firewalld
+        state: restarted
+

@@ -1,0 +1,6 @@
+03/01/2026 14:08:28 INFO: Verbose logging redirected to /home/wazuh/indexer/certificates/wazuh-certificates-tool.log
+03/01/2026 14:08:29 INFO: Generating the root certificate.
+03/01/2026 14:08:29 INFO: Generating Admin certificates.
+03/01/2026 14:08:29 INFO: Admin certificates created.
+03/01/2026 14:08:29 INFO: Generating Wazuh indexer certificates.
+03/01/2026 14:08:29 INFO: Wazuh indexer certificates created.

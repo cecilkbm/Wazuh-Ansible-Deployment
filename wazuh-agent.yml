@@ -1,0 +1,16 @@
+---
+- hosts: alma1 alma2 alma3
+  become: yes
+  become_user: root
+  roles:
+    - /etc/ansible/roles/wazuh-ansible/roles/wazuh/ansible-wazuh-agent
+  vars:
+    wazuh_managers:
+      - address: 192.168.64.135
+        port: 1514
+        protocol: tcp
+        api_port: 55000
+        api_proto: 'https'
+        api_user: wazuh
+        max_retries: 5
+        retry_interval: 5
