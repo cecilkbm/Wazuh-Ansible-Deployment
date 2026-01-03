@@ -1,12 +1,12 @@
 ---
-- hosts: alma1 alma2 alma3
+- hosts: endpoint1 endpoint2 endpoint3
   become: yes
   become_user: root
   roles:
     - /etc/ansible/roles/wazuh-ansible/roles/wazuh/ansible-wazuh-agent
   vars:
     wazuh_managers:
-      - address: 192.168.64.135
+      - address: 192.168.64.xxx # Use the actual host IP here
         port: 1514
         protocol: tcp
         api_port: 55000
