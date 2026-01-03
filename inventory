@@ -1,22 +1,22 @@
 [prod]
-alma1
+endpoint1
 
 [uat]
-alma2
+endpoint2
 
 [sit]
-alma3
+endpoint3
 
 [webservers]
-alma1
-alma3
+endpoint1
+endpoint3
 
 [databases]
-alma2
+endpointa2
 
 [nonprod:children]
 uat
 sit
 
 [wazuh_manager]
-alma5
+endpoint5
