@@ -2,7 +2,7 @@ nodes:
   # Indexer server nodes
   indexer:
     - name: node-1
-      ip: 192.168.64.135
+      ip: 192.168.64.xxx # Use the actual host IP here
 
   # Wazuh server nodes
   # Use node_type only with more than one Wazuh manager
