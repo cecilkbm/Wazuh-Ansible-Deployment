@@ -1,4 +1,4 @@
-- hosts: alma5
+- hosts: host
   roles:
     - role: /etc/ansible/roles/wazuh-ansible/roles/wazuh/wazuh-indexer
       perform_installation: false
@@ -8,12 +8,12 @@
     instances:
       node-1:
         name: node-1       # Important: must be equal to indexer_node_name.
-        ip: 192.168.64.135
+        ip: 192.168.64.xxx # Use the actual host IP her
         role: indexer
   tags:
     - generate-certs
 
-- hosts: alma5
+- hosts: host
   become: yes
   become_user: root
   roles:
@@ -22,10 +22,10 @@
 
   vars:
     single_node: true
-    indexer_network_host: 0.0.0.0
+    indexer_network_host: 0.0.0.0 # Listen on all interfaces
     ansible_shell_allow_world_readable_temp: true
     instances:           # A certificate will be generated for every node using the name as CN.
       node-1:
         name: node-1
-        ip: 192.168.64.135
+        ip: 192.168.64.xxx # Use actual IP for certificate generation
         role: indexer
